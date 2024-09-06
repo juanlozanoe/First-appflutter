@@ -1,3 +1,3 @@
 class Artesanium{
-  
+  String? name;
 }
