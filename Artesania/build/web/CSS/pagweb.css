@@ -1,0 +1,279 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/08/2024, 08:31:11 AM
+    Author     : Usuario
+*/
+
+body {
+  background: url("Artesania\Vistas\green-370121_1920.png");
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+}
+
+#partesuperior {
+  color: white;
+}
+
+#partesuperior .navbar-brand {
+  color: white;
+}
+
+#partesuperior .navbar-nav .nav-link {
+  color: white;
+}
+
+header {
+  background: linear-gradient(45deg, #11998e, #38ef7d); /* Degradado verde */
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agregado */
+}
+
+a {
+  color: #fff;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 24px;
+}
+
+.navbar-toggler-icon {
+  background-color: white;
+}
+
+.fas.fa-shopping-cart {
+  color: rgb(1, 48, 1);
+}
+
+.contenido {
+  padding: 20px;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregado */
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+.card {
+  background: #ECE9E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregado */
+}
+
+.card img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card h5 {
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+.card p {
+  font-size: 16px;
+}
+
+.card .btn {
+  background-color: #8aef38;
+  border: 1 px ;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregado */
+}
+
+.card .btn:hover {
+  background-color: #11998e;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Agregado */
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  nav ul li {
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+  }
+}
+
+.botoncolor {
+  background: #215f00;
+  border-radius: 35px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agregado */
+}
+
+#fondo_negro {
+  background: url("background-1503842_1920.png");
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agregado */
+}
+
+.card1 {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agregado */
+}
+
+.card1 svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card1:hover {
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregado */
+}
+
+.card1:hover .card__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+
+.card1__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card1__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+.card1:hover svg {
+  scale: 0;
+  transform: rotate(-45deg);
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+}
+
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 20px;
+  grid-auto-columns: calc(100% / 3);
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-card {
+  text-align: center;
+  background: linear-gradient(grey,white);
+  border: 2px solid #17d610;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(16, 170, 124, 0.1); /* Agregado */
+}
+
+.carousel-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 200px; /* Ajusta la altura según sea necesario */
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.carousel-button {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Agregado */
+}
+
+.prev {
+  left: 10px; /* Ubicación de la flecha izquierda */
+}
+
+.next {
+  right: 10px; /* Ubicación de la flecha derecha */
+}
+
+.search-container {
+  width: 100%;
+  
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 1000px; /* Ancho máximo para la barra de búsqueda */
+  margin: 0 auto; /* Centra la barra de búsqueda */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregado */
+}
+
+#fondo_ {
+  background: url("background-1503842_1920.png");
+}
+
+.diseno1 {
+  background: url(background-1503842_1920.png);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregado */
+  border-radius: 10px;
+}
