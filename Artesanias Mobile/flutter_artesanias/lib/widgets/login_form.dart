@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:proyectomovil/Widgets/servicio.dart';
-import 'package:proyectomovil/Widgets/usuario.dart';
+import 'package:flutter_artesanias/home_page.dart';
+import 'package:flutter_artesanias/widgets/servicio.dart';
+import 'package:flutter_artesanias/widgets/usuario.dart';
 
-import '../home_list.dart'; // Importa el servicio AuthService
+
 
 class LoginForm extends StatefulWidget {
   final Function onLoginSuccess;
