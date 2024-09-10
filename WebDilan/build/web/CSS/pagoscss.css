@@ -1,0 +1,85 @@
+/* General */
+body {
+    background-color: #f4f4f9; /* Fondo claro */
+    color: #333; /* Texto oscuro pero no negro */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #64ffda; /* Verde claro para el header */
+}
+
+.navbar-brand, .nav-link {
+    color: #333 !important; /* Texto en gris oscuro */
+}
+
+.navbar-toggler-icon {
+    background-color: #64ffda; /* Verde claro para el icono del menú */
+}
+
+/* Estilo para los cards */
+.card {
+    background-color: #fff; /* Fondo blanco para las tarjetas */
+    border: 2px solid #64ffda; /* Borde verde claro */
+    color: #333; /* Texto en gris oscuro */
+}
+
+.card-header {
+    background-color: #e8f5e9; /* Verde muy suave para el encabezado */
+    color: #333; /* Texto oscuro */
+}
+
+.form-label {
+    color: #333; /* Etiquetas del formulario en gris oscuro */
+}
+
+input, select, .form-control {
+    background-color: #fff; /* Fondo blanco para los campos */
+    border: 1px solid #64ffda; /* Borde verde claro */
+    color: #333; /* Texto en gris oscuro */
+}
+
+input:focus, select:focus, .form-control:focus {
+    outline: none;
+    border-color: #64ffda; /* Verde claro al hacer focus */
+    box-shadow: 0 0 5px #64ffda; /* Sombra verde claro al hacer focus */
+}
+
+.btn-primary {
+    background-color: #64ffda; /* Verde claro para el botón principal */
+    border-color: #64ffda; /* Borde verde claro */
+    color: #fff; /* Texto blanco para contraste */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Gris para el botón secundario */
+    border-color: #6c757d; /* Borde gris */
+    color: #fff; /* Texto claro */
+}
+
+footer {
+    background-color: #e8f5e9; /* Fondo verde claro suave para el footer */
+    color: #333; /* Texto en gris oscuro */
+    padding: 20px 0;
+}
+
+footer .table td {
+    color: #333; /* Texto oscuro en la tabla del footer */
+}
+
+.footer-icons img {
+    margin-left: 10px;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.text-end {
+    text-align: end;
+}
+
+.footer-icons {
+    padding-top: 10px;
+}

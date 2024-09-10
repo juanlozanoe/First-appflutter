@@ -1,5 +1,6 @@
 
 
+
 import 'dart:convert';
 
 List<Artesanium> artesaniumFromJson(String str) => List<Artesanium>.from(json.decode(str).map((x) => Artesanium.fromJson(x)));
@@ -68,4 +69,7 @@ class EnumValues<T> {
             reverseMap = map.map((k, v) => MapEntry(v, k));
             return reverseMap;
     }
+class Artesanium{
+  String? name;
 }
+
