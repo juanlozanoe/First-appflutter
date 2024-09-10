@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlador;
+package Controlador;
 
+import Modelo.Categoria;
+import Modelo.CategoriaDAO;
+import Modelo.Producto;
+import Modelo.ProductoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -15,17 +19,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import modelos.Producto;
-import Modelo.ProductoDAO;
 
 /**
  *
- * @author Jashir
+ * @author SENA
  */
-@WebServlet(name = "Ctr", urlPatterns = {"/Ctr"})
+@WebServlet(name = "CtrProducto", urlPatterns = {"/CtrProducto"})
 public class CtrProducto extends HttpServlet {
     ProductoDAO pdao = new ProductoDAO();
-    List<Producto> productos = new ArrayList();
+    CategoriaDAO cdao = new CategoriaDAO();
+    List<Producto>productos = new ArrayList();
+    List<Categoria>categorias = new ArrayList();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,22 +45,20 @@ public class CtrProducto extends HttpServlet {
         String accion = request.getParameter("accion");
         HttpSession sesion = request.getSession();
         productos = pdao.listar();
-        switch(accion){
-            case "pantalla":
-                //request.setAttribute("categoria", categorias);
+        categorias = cdao.listar();
+        switch (accion) {
+            case "Home":
+                request.setAttribute("categorias", categorias);
                 request.setAttribute("productos", productos);
-                if (sesion.getAttribute("Rol") != null) {
-                    System.out.println("Tipo en sesión: " + sesion.getAttribute("Rol"));
-                    if (sesion.getAttribute("Rol").equals("usuario")) {
-                        System.out.println("Redireccionando a la vista del cliente");
-                        request.getRequestDispatcher("/Vistas/Home_cliente.jsp").forward(request, response);
-                    }else if(sesion.getAttribute("Rol").equals("administrador")){
-                        System.out.println("Redireccionando a la vista del Administrador");
-                        request.getRequestDispatcher("/Vistas/Home_administrador.jsp").forward(request, response);
-                    }
+
+                String tipoUsuario = (String) sesion.getAttribute("Rol");
+
+                if (tipoUsuario != null && tipoUsuario.equals("cliente")) {
+                    request.getRequestDispatcher("Vistas/Home_cliente.jsp").forward(request, response);
                 } else {
-                    System.out.println("Atributo Tipo es null, redirigiendo a inicio");
-                    request.getRequestDispatcher("/Vistas/Pantallainicialjsp.jsp").forward(request, response);
+                    // Si el rol es nulo o no es cliente, redirigir al inicio
+                    System.out.println("Entró en inicio");
+                    request.getRequestDispatcher("Vistas/Patallainicialjsp.jsp").forward(request, response);
                 }
                 break;
         }
