@@ -1,14 +1,14 @@
-import 'package:proyectomovil/Widgets/usuario.dart';
+import 'package:flutter_artesanias/widgets/usuario.dart'; // Ensure this import is correct
 
 class AuthService {
   Future<bool> login(Usuario user) async {
-    // Verifica si las credenciales son correctas
-    if (user.username == "abel" && user.password == "mattos") {
-      // Simula un proceso de inicio de sesión exitoso
+    // Verifies if the credentials are correct
+    if (user.username == "juan" && user.password == "1208") {
+      // Simulates a successful login process
       await Future.delayed(Duration(seconds: 1));
       return true;
     } else {
-      // Simula un proceso de inicio de sesión fallido
+      // Simulates a failed login process
       await Future.delayed(Duration(seconds: 1));
       return false;
     }
