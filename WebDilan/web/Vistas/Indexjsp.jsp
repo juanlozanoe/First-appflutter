@@ -1,3 +1,8 @@
+<%-- 
+    Document   : Index
+    Created on : 10/09/2024, 04:27:13 PM
+    Author     : SENA
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -6,7 +11,7 @@
         <title>JSP Page</title>
     </head>
     <%
-        response.sendRedirect("/ArtesaniaWeb/CtrProducto?accion=pantalla");
+        response.sendRedirect("/WebDilan/CtrProducto?accion=Home");
     %>
     <body>
         <h1>Hello World!</h1>
