@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ofertas del DÌa - ParaÌso del Artesano</title>
+    <title>Ofertas del D√≠a - Para√≠so del Artesano</title>
     <link rel="stylesheet" href="/Artesania/CSS/pagweb.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* Estilos para el body y la estructura principal */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contenido {
+            flex: 1;
+            background-color: #fff; /* Blanco */
+            padding: 40px 0;
+        }
+
         /* Estilos para el header */
         #partesuperior {
-            background-color: #4CAF50; /* Verde claro */
+            background: linear-gradient(135deg, #4CAF50, #2E7D32); /* Gradiente verde */
             color: white;
         }
 
@@ -22,36 +39,56 @@
             color: #ffc107;
         }
 
+        /* Estilos para las tarjetas */
         .card {
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             cursor: pointer;
+            border: 1px solid #ddd; /* Borde de la tarjeta */
+            border-radius: 8px; /* Bordes redondeados */
         }
 
         .card:hover {
             transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra m√°s pronunciada */
         }
 
+        /* Botones personalizados */
         .btn-custom {
-            background-color: #4CAF50; /* Verde claro */
+            background: linear-gradient(135deg, #4CAF50, #388E3C); /* Gradiente verde */
             color: white;
             border-radius: 50px;
+            transition: background-color 0.3s ease-in-out;
         }
 
         .btn-custom:hover {
-            background-color: #388E3C; /* Verde m·s oscuro */
+            background: linear-gradient(135deg, #388E3C, #2E7D32); /* Gradiente verde m√°s oscuro */
         }
 
-        #fondo_negro {
-            background-color: #333; /* Gris oscuro */
-            color: white;
-            padding: 40px 0;
-        }
-
+        /* Estilos para el footer */
         footer {
-            background-color: #4CAF50; /* Verde claro */
+            background: linear-gradient(135deg, #4CAF50, #2E7D32); /* Gradiente verde */
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Sombra superior para un efecto flotante */
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Animaciones suaves para scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animaci√≥n de scroll suave para los enlaces de navegaci√≥n */
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
         }
     </style>
 </head>
@@ -59,7 +96,7 @@
     <header>
         <nav class="navbar navbar-expand-lg" id="partesuperior">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><b>ParaÌso Del Artesano</b></a>
+                <a class="navbar-brand" href="#"><b>Para√≠so Del Artesano</b></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -67,8 +104,8 @@
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link" href="index.html"><b>Inicio</b></a></li>
                         <li class="nav-item"><a class="nav-link" href="contacto.html"><b>Contacto</b></a></li>
-                        <li class="nav-item"><a class="nav-link" href="novedades.html"><img src="icons8-marca-de-verificaciÛn-48.png" alt=""><b>Novedades</b></a></li>
-                        <li class="nav-item"><a class="nav-link active" href="#"><img src="icons8-dÛlar-estadounidense-en-cÌrculo-100.png" alt="" width="50px"><b>Ofertas del DÌa</b></a></li>
+                        <li class="nav-item"><a class="nav-link" href="novedades.html"><img src="icons8-marca-de-verificaci√≥n-48.png" alt=""><b>Novedades</b></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#"><img src="icons8-d√≥lar-estadounidense-en-c√≠rculo-100.png" alt="" width="50px"><b>Ofertas del D√≠a</b></a></li>
                     </ul>
                     <div class="d-flex align-items-center">
                         <a href="carrito.html" class="nav-link"><img src="icons8-carrito-de-compras-64.png" alt="" width="40px"></a>
@@ -79,41 +116,30 @@
         </nav>
     </header>
 
-    <div class="contenido" id="fondo_negro">
+    <div class="contenido">
         <div class="container">
-            <h1 class="text-center my-5">Ofertas del DÌa</h1>
+            <h1 class="text-center my-5">Ofertas del D√≠a</h1>
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- AquÌ puedes agregar las tarjetas de ofertas -->
+                <!-- Aqu√≠ puedes agregar las tarjetas de ofertas -->
                 <div class="col">
                     <div class="card h-100 text-center">
                         <img src="oferta1.png" class="card-img-top" alt="Oferta 1">
                         <div class="card-body">
                             <h5 class="card-title">Oferta 1</h5>
-                            <p class="card-text">DescripciÛn de la oferta 1.</p>
+                            <p class="card-text">Descripci√≥n de la oferta 1.</p>
                             <a href="#" class="btn btn-custom btn-lg">Ver ></a>
                         </div>
                     </div>
                 </div>
-                <!-- Repetir para m·s ofertas -->
+                <!-- Repetir para m√°s ofertas -->
             </div>
         </div>
     </div>
 
     <footer> 
-        <p>&copy; 2024 ParaÌso del Artesano. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Para√≠so del Artesano. Todos los derechos reservados.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // AnimaciÛn de scroll suave para los enlaces de navegaciÛn
-        document.querySelectorAll('a.nav-link').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>

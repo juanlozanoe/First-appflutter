@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../Css/Homeusuariocss.css" rel="stylesheet" type="text/css"/>
     <style>
-        /* Estilos para el header */
+     
         header .navbar {
             background: linear-gradient(to right, #56ab2f, #a8e063);
         }
