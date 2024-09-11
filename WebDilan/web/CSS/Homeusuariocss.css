@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/08/2024, 08:31:11 AM
+    Author     : Usuario
+*/
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.hero {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.products .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.products .card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.products .card-body {
+    text-align: center;
+}
+
+.footer {
+    background-color: #343a40;
+}
+
+.footer-icons {
+    margin-top: 10px;
+}
+
+.footer-icons img {
+    margin: 0 10px;
+}
