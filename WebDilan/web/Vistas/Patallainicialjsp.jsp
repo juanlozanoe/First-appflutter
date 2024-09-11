@@ -1,20 +1,61 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Paraiso del Artesano</title>
-    <link rel="stylesheet" href="/Artesania/CSS/inicio.css">
+    <title>Inicio - Paraíso del Artesano</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/WebDilan/CSS/Pantallainiciocss.css" rel="stylesheet" type="text/css"/>
+    <style>
+        body {
+            background-color: #f8f9fa; /* Fondo blanco */
+        }
+        header {
+            background: linear-gradient(to right, #4caf50, #2c6b2f); /* Verde degradado */
+            color: white;
+        }
+        .navbar-brand {
+            color: white !important;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+        .navbar-nav .nav-link.active {
+            font-weight: bold;
+        }
+        #titulo_principal {
+            color: #2c6b2f; /* Verde oscuro */
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .card-body {
+            padding: 20px;
+        }
+        footer {
+            background: linear-gradient(to right, #4caf50, #2c6b2f);
+            color: white;
+            padding: 20px;
+        }
+        .footer-icons img {
+            margin: 0 10px;
+        }
+        .footer-icons a {
+            color: white;
+        }
+        .footer-icons a:hover {
+            color: #d4e157;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light" id="partesuperior">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/WebDilan/CtrProducto?accion=Home"><b>DECO Artesanías</b></a>
+                <a class="navbar-brand" href="/WebDilan/CtrProducto?accion=Home"><b>Paraíso del Artesano</b></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -22,7 +63,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link" href="contacto.jsp"><b>Contacto</b></a></li>
                         <li class="nav-item"><a class="nav-link active" href="novedades.jsp"><b>Novedades</b></a></li>
-                        <li class="nav-item"><a class="nav-link" href="oferta_del_dia.jsp"><b>Ofertas del día</b></a></li>
+                        <li class="nav-item"><a class="nav-link" href="oferta_del_dia.jsp"><b>Ofertas del Día</b></a></li>
                         <li class="nav-item">
                             <a class="nav-link" href="carrito.jsp">
                                 <img src="imagenes/carrito-de-compras.png" alt="Carrito" width="30px">
@@ -38,7 +79,7 @@
     </header>
 
     <div class="container my-5">
-        <h1 class="text-center mb-5" id="titulo_principal">Bienvenido a Deco Artesanías</h1>
+        <h1 class="text-center mb-5" id="titulo_principal">Bienvenido a Paraíso del Artesano</h1>
 
         <div class="row">
             <c:forEach var="pro" items="${productos}">
@@ -61,7 +102,7 @@
             <table class="table table-borderless text-center">
                 <tbody>
                     <tr>
-                        <td>&copy; 2024 DECO Artesanías</td>
+                        <td>&copy; 2024 Paraíso del Artesano</td>
                         <td>Todos los derechos reservados</td>
                         <td>Teléfono: +57 300 5361916</td>
                     </tr>
