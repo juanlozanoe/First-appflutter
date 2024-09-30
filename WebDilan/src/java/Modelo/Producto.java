@@ -7,85 +7,72 @@ package Modelo;
 
 /**
  *
- * @author Jashir
+ * @author kkati
  */
 public class Producto {
-    private int Id;
-    private String Nombre;
-    private String Foto;
-    private String Descripcion;
-    private int Precio;
-    private int Stock;
-    private int Idcategoria;
+    private int id; // Asegúrate de que esto esté presente
+    private int precio, stock;
+    private String nombre, foto, descripcion;
 
     public Producto() {
     }
 
-    public Producto(int Id, String Nombre, String Foto, String Descripcion, int Precio, int Stock, int Idcategoria) {
-        this.Id = Id;
-        this.Nombre = Nombre;
-        this.Foto = Foto;
-        this.Descripcion = Descripcion;
-        this.Precio = Precio;
-        this.Stock = Stock;
-        this.Idcategoria = Idcategoria;
+    public Producto(int id, int precio, int stock, String nombre, String foto, String descripcion) {
+        this.id = id;
+        this.precio = precio;
+        this.stock = stock;
+        this.nombre = nombre;
+        this.foto = foto;
+        this.descripcion = descripcion;
     }
 
+    // Getters y Setters
     public int getId() {
-        return Id;
+        return id;
     }
 
-    public void setId(int Id) {
-        this.Id = Id;
-    }
-
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
-    }
-
-    public String getFoto() {
-        return Foto;
-    }
-
-    public void setFoto(String Foto) {
-        this.Foto = Foto;
-    }
-
-    public String getDescripcion() {
-        return Descripcion;
-    }
-
-    public void setDescripcion(String Descripcion) {
-        this.Descripcion = Descripcion;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getPrecio() {
-        return Precio;
+        return precio;
     }
 
-    public void setPrecio(int Precio) {
-        this.Precio = Precio;
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
 
     public int getStock() {
-        return Stock;
+        return stock;
     }
 
-    public void setStock(int Stock) {
-        this.Stock = Stock;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
-    public int getIdcategoria() {
-        return Idcategoria;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setIdcategoria(int Idcategoria) {
-        this.Idcategoria = Idcategoria;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-    
-    
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 }
+

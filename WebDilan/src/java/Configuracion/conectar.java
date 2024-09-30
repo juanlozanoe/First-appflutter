@@ -12,15 +12,15 @@ import java.sql.DriverManager;
  *
  * @author Maiyer
  */
-public class conectar {
+public class Conectar {
      private String driver ="com.mysql.jdbc.Driver";
-    private String CadenaConeccion = "jdbc:mysql://localhost/artesaniasdb";
+    private String CadenaConeccion = "jdbc:mysql://localhost/artesania";
     private String usuario = "root";
     private String contrasena="";
     public Connection con;
     
     
-    public conectar(){
+    public Conectar(){
         try{
             Class.forName(driver);
             con = DriverManager.getConnection(CadenaConeccion, usuario, contrasena);

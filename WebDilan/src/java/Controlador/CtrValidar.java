@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
@@ -65,7 +66,9 @@ public class CtrValidar extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
+public static boolean verificarcontrasena (String password, String contrasenaencriptada){
+        return BCrypt.checkpw(password, contrasenaencriptada);
+    }
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -102,30 +105,36 @@ public class CtrValidar extends HttpServlet {
                 String usu = request.getParameter("usuario");
                 String pass = request.getParameter("contrasena");
                 Usuario user = usudao.Validar(usu, pass);
-                if (user != null && user.getCorreo() != null) {
+                if (user.getCorreo() != null) {
+                    System.out.println("usuario: "+user.getContrasena());
+                    System.out.println("contraseña: "+pass);
+                boolean verificarpassword = verificarcontrasena(pass, user.getContrasena());
+                if (verificarpassword) {
                     sesion.setAttribute("log", '1');
                     sesion.setAttribute("correo", user.getCorreo());
                     sesion.setAttribute("nombre", user.getNombre());
                     sesion.setAttribute("contrasena", user.getContrasena());
-                    sesion.setAttribute("id", user.getId());
+                    sesion.setAttribute("iduser", user.getId());
                     sesion.setAttribute("direccion", user.getDireccion());
                     sesion.setAttribute("telefono", user.getTelefono());
                     sesion.setAttribute("rol", user.getRol());
                     sesion.setAttribute("apellido", user.getApellido());
                     sesion.setAttribute("usuario", user);
                     if ("administrador".equalsIgnoreCase(user.getRol())) {
-                        response.sendRedirect(request.getContextPath() + "/Vistas/Home_administrador.jsp");
+                        response.sendRedirect(request.getContextPath() + "/CtrProductos?accion=homeAdmin");
                     } else {
-                         response.sendRedirect(request.getContextPath() + "/Vistas/Home_cliente.jsp");
+                         response.sendRedirect(request.getContextPath() + "/CtrProductos?accion=home&id=" + user.getId());
                     }
                 } else {
                     request.setAttribute("error", "Usuario o Contraseña Incorrectos");
-                    request.getRequestDispatcher("/Vistas/login.jsp").forward(request, response);
+                    request.getRequestDispatcher("Vistas/login.jsp").forward(request, response);
                 }
             }
+            }
         } catch (Exception e) {
+            System.out.println("error al validar usuario " + e);
             request.setAttribute("error", "Ocurrió un error durante el proceso.");
-            request.getRequestDispatcher("/Vistas/Login.jsp").forward(request, response);
+            request.getRequestDispatcher("Vistas/login.jsp").forward(request, response);
         }
 
     }

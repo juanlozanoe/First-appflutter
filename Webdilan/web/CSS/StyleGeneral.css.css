@@ -1,0 +1,175 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #e0f7fa; /* Fondo azul claro */
+}
+
+.header {
+    background-color: #00bcd4; /* Azul brillante */
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header .icons .bi {
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.header .icons .bi:hover {
+    color: #80deea; /* Azul más claro para hover */
+}
+
+#carouselExampleControls {
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.btn-carousel {
+    background-color: #ffeb3b; /* Amarillo brillante */
+    border: none;
+    color: #333;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-carousel:hover {
+    background-color: #fdd835; /* Amarillo más oscuro */
+    transform: scale(1.1);
+}
+
+.card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+    border-radius: 1rem 1rem 0 0;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #00bcd4; /* Azul brillante */
+}
+
+.card-text {
+    font-size: 1.25rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: #00bcd4; /* Azul brillante */
+    border: none;
+    color: white;
+    padding: 1rem;
+    font-size: 1.125rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0097a7; /* Azul más oscuro */
+    transform: scale(1.05);
+}
+
+.footer {
+    background-color: #00bcd4; /* Azul brillante */
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer h5 {
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.footer-icons .bi {
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-icons .bi:hover {
+    color: #80deea; /* Azul más claro para hover */
+}
+
+.product-detail-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    width: 90%;
+    z-index: 1050;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    display: none;
+    overflow: hidden;
+    padding: 2rem;
+    animation: slide-in 0.3s ease-out;
+}
+
+.product-detail-card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: solid 3px #00bcd4; /* Azul brillante */
+    border-radius: 1rem;
+}
+
+.img{
+    height: 400px;
+}
