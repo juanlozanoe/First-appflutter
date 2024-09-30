@@ -1,138 +1,96 @@
-<%-- 
-    Document   : newjsp
-    Created on : 9/09/2024, 08:35:26 PM
-    Author     : jjuan
---%>
-
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link href="/WebDilan/CSS/stile.css" rel="stylesheet" type="text/css">
-    <style>
-        body {
-            background: linear-gradient(to bottom, #f0f9ff, #cbebff);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Iniciar Sesión / Registrarse</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="/Webdilan/CSS/Inicio-de-session.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <section class="user">
+            <div class="user_options-container">
+                <div class="user_options-text">
+                    <div class="user_options-unregistered">
+                        <h2 class="user_unregistered-title">No tienes una cuenta?</h2>
+                        <p class="user_unregistered-text">Regístrate para obtener acceso a miles de artículos.</p>
+                        <button class="user_unregistered-signup" id="signup-button">Registrarse</button>
+                    </div>
 
-        .login-form {
-            background: #fff;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 1.5s ease-in-out;
-            width: 100%;
-            max-width: 400px; /* Ancho mÃ¡ximo del formulario */
-        }
+                    <div class="user_options-registered">
+                        <h2 class="user_registered-title">Ya tienes una cuenta?</h2>
+                        <p class="user_registered-text">Inicia sesión con tus datos y sigue disfrutando de todos nuestros beneficios.</p>
+                        <button class="user_registered-login" id="login-button">Iniciar</button>
+                    </div>
+                </div>
 
-        h5 {
-            text-align: center;
-            color: #28a745;
-            font-size: 24px;
-            margin-bottom: 20px;
-            animation: slideDown 1s ease-in-out;
-        }
+                <div class="user_options-forms" id="user_options-forms">
+                    <div class="user_forms-login">
+                        <h3 class="forms_title"><center>Iniciar sesión</center></h3>
+                        <div class="deco">
+                            <h2>Bienvenidos a Deco Artesanías</h2>
+                        </div>
+                        <form class="forms_form" action="/Webdilan/CtrValidar?accion=ingresar" method="POST">
+                            <fieldset class="forms_fieldset">
+                                <div class="forms_field">
+                                    <input type="text" name="usuario" placeholder="Usuario" class="forms_field-input" required autofocus />
+                                </div>
+                                <div class="forms_field">
+                                    <input type="password" name="contrasena" placeholder="Contraseña" class="forms_field-input" required />
+                                </div>
+                            </fieldset>
+                            <div class="forms_buttons">
+                                <button type="button" class="forms_buttons-forgot">Olvidó su contraseña?</button>
+                                <input type="submit" value="Iniciar sesión" class="forms_buttons-action">
+                            </div>
+                            <c:if test="${not empty error}">
+                                <p style="color: red;">${error}</p>
+                            </c:if>
+                        </form>
+                    </div>
 
-        .form-control {
-            border: 2px solid #28a745;
-            border-radius: 15px;
-            padding: 10px;
-            transition: 0.3s;
-        }
+                    <!-- Formulario de registro -->
+                    <div class="user_forms-signup">
+                        <h3 class="forms_title"><center>Registrarse</center></h3>
+                        <form class="forms_form" action="/Webdilan/CtrUsuario" method="POST">
+                            <input type="hidden" name="accion" value="crear">
+                            <fieldset class="forms_fieldset">
+                                <div class="forms_field">
+                                    <input type="text" name="nombre" placeholder="Nombre" class="forms_field-input" required />
+                                </div>
+                                <div class="forms_field">
+                                    <input type="text" name="apellido" placeholder="Apellido" class="forms_field-input" required />
+                                </div>
+                                <div class="forms_field">
+                                    <input type="text" name="direccion" placeholder="Dirección" class="forms_field-input" required />
+                                </div>
+                                <div class="forms_field">
+                                    <input type="text" name="telefono" placeholder="Teléfono" class="forms_field-input" required />
+                                </div>
+                                <div class="forms_field">
+                                    <input type="email" name="correo" placeholder="Correo" class="forms_field-input" required />
+                                </div>
+                                <div class="forms_field">
+                                    <input type="text" name="usuario" placeholder="Usuario" class="forms_field-input" required />
+                                </div>
+                                <div class="forms_field">
+                                    <input type="password" name="contrasena" placeholder="Contraseña" class="forms_field-input" required />
+                                </div>
+                                <div class="forms_field">
+                                    <input type="text" name="rol" placeholder="Rol" class="forms_field-input" required />
+                                </div>
+                            </fieldset>
+                            <div class="forms_buttons">
+                                <input type="submit" value="Registrar" class="forms_buttons-action">
+                            </div>
+                        </form>
+                    </div>
 
-        .form-control:focus {
-            border-color: #218838;
-            box-shadow: 0 0 10px rgba(33, 136, 56, 0.4);
-        }
 
-        #boton1 {
-            background: linear-gradient(45deg, #28a745, #98fb98);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            color: #fff;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        #boton1:hover {
-            background: linear-gradient(45deg, #218838, #7ecb7e);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        p {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        p a {
-            text-decoration: none;
-            color: #28a745;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        p a:hover {
-            color: #218838;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="login-form">
-        <h5><strong>Login</strong></h5>
-        <div class="" role="alert">
-            <c:if test="${not empty error}">
-                <p style="color: red;">${error}</p>
-            </c:if>
-        </div>
-        <form action="/WebDilan/CtrValidar?accion=ingresar" method="POST">
-            <div class="mb-3">
-                <label for="usuario" class="form-label">Usuario:</label>
-                <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Usuario" required>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="contrasena" class="form-label">ContraseÃ±a:</label>
-                <input type="password" id="contrasena" name="contrasena" class="form-control" placeholder="ContraseÃ±a" required>
-            </div>
-            <button type="submit" name="accion" value="ingresar" class="btn" id="boton1">Ingresar</button>
-        </form>
-        <p class="mt-3"><a href="#">Â¿Olvidaste tu contraseÃ±a?</a></p>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-</body>
+        </section>
+        <script src="/Webdilan/JS/Inicio-de-session.js" type="text/javascript"></script>
+    </body>
 </html>
